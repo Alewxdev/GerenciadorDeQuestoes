@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário de Estudo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Botão de Ajuda -->
+    <button id="help-button" onclick="showHelp()">Como usar?</button>
+
+    <!-- Modal com Instruções -->
+    <div id="help-modal" style="display: none;">
+        <div class="modal-content">
+            <span onclick="hideHelp()" class="close-button">&times;</span>
+            <h2>Como formatar as perguntas</h2>
+            <p>
+                Para adicionar perguntas corretamente, siga este formato:
+            </p>
+            <pre>
+A pergunta deve estar em uma linha.
+
+Cada opção de resposta deve estar em uma linha separada, começando com a), b), c) ou d).
+
+A resposta correta deve ser marcada com ✅ ao lado da opção correta.
+            </pre>
+            <p>
+                Exemplo:
+            </p>
+            <pre>
+Qual é o resultado de 25 ÷ 5?
+a) 4
+b) 5 ✅
+c) 6
+d) 7
+            </pre>
+            <button onclick="copyInstructions()">Copiar Instruções</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Logo com borda RGB animada -->
+        <div class="logo">
+            <img src="logo1.webp" alt="Logo do Questionário" class="logo-img">
+        </div>
+
+        <h1>Questionário de Estudo</h1>
+
+        <!-- Área para adicionar perguntas e opções -->
+        <div id="input-area">
+            <textarea id="question-input" placeholder="Digite a pergunta"></textarea>
+            <input type="text" id="option-a" placeholder="Opção A">
+            <input type="text" id="option-b" placeholder="Opção B">
+            <input type="text" id="option-c" placeholder="Opção C">
+            <input type="text" id="option-d" placeholder="Opção D">
+            <select id="correct-option">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+            </select>
+            <button onclick="addQuestion()">Adicionar Pergunta</button>
+        </div>
+
+        <!-- Área para importar perguntas -->
+        <div id="import-area">
+            <h2>Importar Perguntas</h2>
+            <textarea id="import-text" placeholder="Cole as perguntas aqui no formato especificado:
+Qual é o valor de 7 + 5?
+a) 10
+b) 11
+c) 12 ✅
+d) 13"></textarea>
+            <button onclick="importQuestions()">Importar Perguntas</button>
+        </div>
+
+        <!-- Área para exibir o questionário -->
+        <div id="quiz-area" style="display: none;">
+            <div id="questions-container"></div>
+            <button onclick="submitQuiz()">Finalizar Questionário</button>
+        </div>
+
+        <!-- Área para exibir os resultados -->
+        <div id="result-area" style="display: none;">
+            <h2>Respostas Corretas</h2>
+            <div id="correct-answers"></div>
+        </div>
+
+        <!-- Área para exportar perguntas -->
+        <div id="export-area" style="display: none;">
+            <h2>Exportar Perguntas</h2>
+            <textarea id="export-text" readonly></textarea>
+            <button onclick="copyExport()">Copiar Texto</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

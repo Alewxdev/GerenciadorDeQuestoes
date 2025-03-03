@@ -1,0 +1,310 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    width: 900px;
+    max-width: 90%;
+    text-align: center;
+}
+
+/* Logo com borda RGB animada */
+.logo {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-img {
+    max-width: 200px; /* Tamanho aumentado */
+    height: auto;
+    border: 4px solid transparent;
+    border-radius: 50%; /* Borda redonda */
+    padding: 10px; /* Espaçamento interno */
+    animation: borderAnimation 3s infinite linear; /* Animação RGB */
+}
+
+@keyframes borderAnimation {
+    0% {
+        border-color: #ff0000; /* Vermelho */
+    }
+    25% {
+        border-color: #00ff00; /* Verde */
+    }
+    50% {
+        border-color: #0000ff; /* Azul */
+    }
+    75% {
+        border-color: #ff00ff; /* Magenta */
+    }
+    100% {
+        border-color: #ff0000; /* Vermelho */
+    }
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #890baf;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #890baf;
+    font-weight: 500;
+}
+
+/* Campos de Entrada */
+textarea, input, select {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+textarea:focus, input:focus, select:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 12px rgba(37, 117, 252, 0.3);
+    outline: none;
+}
+
+/* Botões */
+button {
+    padding: 15px 30px;
+    border: none;
+    background-color: #890baf;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #1a5bbf;
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Áreas Específicas */
+#input-area, #import-area, #quiz-area, #result-area, #export-area {
+    margin-top: 30px;
+}
+
+#correct-answers {
+    text-align: left;
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 25px;
+}
+
+#import-text, #export-text {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#import-text:focus, #export-text:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 12px rgba(37, 117, 252, 0.3);
+    outline: none;
+}
+
+/* Questionário */
+#questions-container {
+    text-align: left;
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 25px;
+}
+
+#questions-container p {
+    margin: 20px 0;
+    font-size: 22px;
+    color: #333;
+    font-weight: 600;
+}
+
+#questions-container label {
+    display: block;
+    margin: 20px 0;
+    font-size: 20px;
+    color: #555;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+#questions-container label:hover {
+    background-color: #f1f1f1;
+    transform: translateY(-3px);
+}
+
+#questions-container input[type="radio"] {
+    margin-right: 15px;
+    accent-color: #2575fc;
+    transform: scale(1.5);
+}
+
+/* Resultados */
+#correct-answers p {
+    margin: 20px 0;
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+}
+
+#correct-answers .result-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    transition: transform 0.2s ease;
+}
+
+#correct-answers .result-item:hover {
+    transform: translateY(-3px);
+}
+
+#correct-answers .correct {
+    color: #28a745;
+    font-weight: 600;
+}
+
+#correct-answers .incorrect {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+#correct-answers hr {
+    border: 0;
+    border-top: 2px solid #e0e0e0;
+    margin: 20px 0;
+}
+
+/* Botão de Ajuda e Modal */
+#help-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #871ab3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 1000;
+}
+
+#help-button:hover {
+    background-color: #000000;
+}
+
+#help-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+pre {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+    }
+
+    #questions-container p {
+        font-size: 20px;
+    }
+
+    #questions-container label {
+        font-size: 18px;
+        margin: 15px 0;
+        padding: 15px;
+    }
+
+    #correct-answers p {
+        font-size: 16px;
+    }
+}
